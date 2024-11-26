@@ -9,7 +9,7 @@
     {
       "@id": "./",
       "@type": "Dataset",
-      "datePublished": "2024-11-14T15:07:14+00:00",
+      "datePublished": "2024-11-26T15:07:14+00:00",
         "hasPart": [
             {"@id": "data/metadata.xlsx"}
 
@@ -27,6 +27,8 @@
     },
     {
       "@id": "schema",
+      "@type": "schema",
+
       "conformsTo": {
         "@id": "https://json-schema.org/draft/2020-12"
       },
