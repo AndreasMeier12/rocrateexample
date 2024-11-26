@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "schema": "schema"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2024-11-14T15:07:14+00:00",
+        "hasPart": [
+            {"@id": "data/metadata.xlsx"}
+
+        ]
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "schema",
+      "conformsTo": {
+        "@id": "https://json-schema.org/draft/2020-12"
+      },
+      "hasParts": [
+        {
+          "@id": "schema.json"
+        }
+      ]
+    },
+    {
+      "@id": "schema.json",
+      "@type": "File"
+    }
+  ]
+}
