@@ -1,15 +1,7 @@
 {
-  "$id": "https://example.com/openbis/",
+  "$id": "https://openbis.ch/",
   "type": "object",
-  "properties": {
-    "code": {
-      "type": "string"
-    },
-    "description": {
-      "type": "string"
-    }
-  },
-  "$defs": {
+  "baseTypes": {
     "space": {
       "type": "object",
       "properties": {
@@ -36,55 +28,46 @@
         "space": {
           "type": "string"
         }
-      }
+      },
+      "required": ["code"]
     },
     "collection": {
       "type": "object",
       "properties": {
-        "space": {
-          "type": "string"
-        },
-        "project": {
-          "type": "string"
-        },
         "code": {
           "type": "string"
         },
-        "identifier": {
+        "description":  {
           "type": "string"
         },
-        "name": {
-          "type": "string"
-        },
-        "default_object_type": {
-          "type": "string"
-        },
-        "default_collection_view": {
+        "validation script": {
           "type": "string"
         }
-      }
+      },
+      "required": ["code"]
     },
-    "entry": {
+    "object": {
       "type": "object",
       "properties": {
-        "project": "string",
-        "name": {
+        "code": {
           "type": "string"
         },
-        "space": {
+        "description": {
           "type": "string"
         },
-        "collection": {
-          "type": "string"
-        },
-        "show_in_project_overview": {
+        "auto generated": {
           "type": "boolean"
         },
-        "document": {
+        "validation": {
+          "type": "string"
+        }, "generated code prefix": {
           "type": "string"
         },
-        "parent": {
-          "type": "string"
+        "parents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "children": {
           "type": "array",
@@ -92,21 +75,106 @@
             "type": "string"
           }
         }
-      }
+      },
+      "required": ["code", "generated code prefix"],
+      "semantics": "https://openbis.readthedocs.io/en/20.10.x/user-documentation/general-users/ELN-types.html#object-types"
     },
-    "raw_data": {
+    "dataset": {
       "type": "object",
       "properties": {
-        "name": {
+        "code": {
           "type": "string"
         },
-        "notes": {
+        "description":  {
           "type": "string"
         },
-        "$xmlcomment": {
+        "validation script": {
           "type": "string"
         }
+      },
+      "required": ["code"]
+    },
+    "vocabulary": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "description": {"type": "string"}
+      }, "required": ["code"]
+    }
+  },
+  "vocabularies":{
+    "default_collection_view": {
+      "type": "object",
+      "allOf": "#/baseTypes/vocabulary",
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": ["FORM_VIEW", "LIST_VIEW"]
+          
+        }, 
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": ["code"]
+    }
+  },
+  "collections":{
+    "collection": {
+      "type": "object",
+      "allOf": [
+        {"$ref": "#/baseTypes/collection"}
+      ]
+    }, "properties": {
+      "mandatory": {
+        "type": "boolean"
+      },
+      "name": {
+        "type": "string"
+      },
+      "default_object_type": {
+        "type": "string"
+      },
+      "default_collection_view": {
+        "type": "string"
       }
+
+    }
+  },
+  "datasets":{
+    "raw_data": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/baseTypes/dataset"
+        }
+      ]
+    },
+    "properties": {
+      "$name": {"type": "string"},
+      "notes": {"type": "string"},
+      "$xmlcomment": {"type": "string"}
+    }
+  },
+  "objects":{
+    "entry": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/baseTypes/object"
+        }
+      ]
+    },
+    "properties": {
+      "$name": {"type": "boolean"},
+      "$show": {"type": "boolean"},
+      "$document": {"type": "string"}
+
     }
   }
 }
