@@ -52,6 +52,12 @@
         "code": {
           "type": "string"
         },
+        "space": {
+          "type": "string"
+        },
+        "project": {
+          "type": "string"
+        },
         "description": {
           "type": "string"
         },
@@ -141,7 +147,7 @@
         "type": "string"
       },
       "default_collection_view": {
-        "type": "string"
+        "$ref": "#/vocabularies/default_collection_view"
       }
 
     }
