@@ -137,17 +137,17 @@
         {"$ref": "#/baseTypes/collection"}
       ]
     }, "properties": {
-      "mandatory": {
-        "type": "boolean"
-      },
       "name": {
-        "type": "string"
+        "type": "string",
+        "description": "Name"
       },
       "default_object_type": {
-        "type": "string"
+        "type": "string",
+        "description": "Enter the code of the object for which the collection is used"
       },
       "default_collection_view": {
-        "$ref": "#/vocabularies/default_collection_view"
+        "$ref": "#/vocabularies/default_collection_view",
+        "description": "Default view for experiments of the type collection"
       }
 
     }
@@ -162,9 +162,9 @@
       ]
     },
     "properties": {
-      "$name": {"type": "string"},
-      "notes": {"type": "string"},
-      "$xmlcomment": {"type": "string"}
+      "$name": {"type": "string", "description": "Name"},
+      "notes": {"type": "string", "description": "Notes"},
+      "$xmlcomment": {"type": "string", "description": "Comments log"}
     }
   },
   "objects":{
@@ -177,9 +177,15 @@
       ]
     },
     "properties": {
-      "$name": {"type": "boolean"},
-      "$show": {"type": "boolean"},
-      "$document": {"type": "string"}
+      "$name": {"type": "boolean",
+        "section": "general",
+        "description": "Name"
+    },
+      "$notes": {"type": "boolean",
+        "section":"general",
+        "description": "Notes"},
+      "$document": {"type": "string",
+    "description": "Comments log"}
 
     }
   }
