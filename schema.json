@@ -44,7 +44,8 @@
           "type": "string"
         }
       },
-      "required": ["code"]
+      "required": ["code"],
+      "semantics": "https://openbis.readthedocs.io/en/20.10.x/user-documentation/general-users/ELN-types.html#collection-types"
     },
     "object": {
       "type": "object",
@@ -98,7 +99,8 @@
           "type": "string"
         }
       },
-      "required": ["code"]
+      "required": ["code"],
+      "semantics": "https://openbis.readthedocs.io/en/20.10.x/user-documentation/general-users/ELN-types.html#dataset-types"
     },
     "vocabulary": {
       "type": "object",
