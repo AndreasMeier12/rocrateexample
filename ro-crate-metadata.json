@@ -11,7 +11,11 @@
       "@type": "Dataset",
       "datePublished": "2024-11-26T15:07:14+00:00",
         "hasPart": [
-            {"@id": "data/metadata.xlsx"}
+            {"@id": "data/metadata.xlsx"},
+            {"@id": "example/data/collection.xlsx"},
+            {"@id": "example/data/raw_data.xlsx"},
+            {"@id": "example/data/entry.xlsx"},
+            {"@id": "example/data/space.xlsx"}
 
         ]
     },
@@ -26,21 +30,36 @@
       }
     },
     {
-      "@id": "schema",
-      "@type": "schema",
+      "@id": "schema.json",
+      "@type": "File",
 
       "conformsTo": {
         "@id": "https://json-schema.org/draft/2020-12"
-      },
-      "hasParts": [
-        {
-          "@id": "schema.json"
-        }
-      ]
+      }
     },
     {
       "@id": "schema.json",
       "@type": "File"
+    }, 
+    {
+      "@id": "example/data/entry.xlsx",
+      "@type": "Dataset",
+      "conformsTo":  {"@id": "schema.json#/objects/entry"}
+    },
+    {
+      "@id": "example/data/collection.xlsx",
+      "@type": "Dataset",
+      "conformsTo": {"@id": "schema.json#/collections/collection"}
+    },
+    {
+      "@id": "example/data/raw_data.xlsx",
+      "@type": "Dataset",
+      "conformsTo": {"@id": "schema.json#/datasets/raw_data"}
+    },
+    {
+      "@id": "example/data/space.xlsx",
+      "@type": "Dataset",
+      "conformsTo":  {"@id": "schema.json#/baseTypes/space"} 
     }
   ]
 }
