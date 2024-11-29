@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
-zip -r rocrate.zip ro-crate-metadata.json.json example/data
+rm rocrate.zip
+zip -r rocrate.zip ro-crate-metadata.json example/data
