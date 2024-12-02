@@ -72,6 +72,20 @@
       "hasDefaultCollectionView": null
     },
     {
+      "@id": "LIST_VIEW",
+      "@type": "openbis:openbis:VocabularyDefaultView",
+      "hasCode": "LIST_VIEW",
+      "hasLabel": "List View",
+      "hasDescription": null
+    },
+    {
+      "@id": "FORM_VIEW",
+      "@type": "openbis:openbis:VocabularyDefaultView",
+      "hasCode": "FORM_VIEW",
+      "hasLabel": "Form View",
+      "hasDescription": null
+    },
+    {
       "@id": "openbis:Space",
       "@type": "rdfs:Class"
     },
@@ -103,6 +117,13 @@
       }
     },
     {
+      "@id": "openbis:VocabularyDefaultView",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": {
+        "@id": "openbis:BaseObject"
+      }
+    },
+    {
       "@id": "openbis:collection",
       "@type": "rdfs:Class",
       "rdfs:subClassOf": {
@@ -112,7 +133,11 @@
     {
       "@id": "openbis:hasDefaultCollectionView",
       "@type": "rdfs:Property",
-      "schema:domainIncludes": [],
+      "schema:domainIncludes": [
+        {
+          "@id": "openbis:BaseObject"
+        }
+      ],
       "schema:rangeIncludes": [
         {
           "@id": "xsd:string"
@@ -120,7 +145,7 @@
       ]
     },
     {
-      "@id": "openbis:default_object_type",
+      "@id": "openbis:hasDefaultObjectType",
       "@type": "rdfs:Property",
       "schema:domainIncludes": [
         {
@@ -134,7 +159,7 @@
       ]
     },
     {
-      "@id": "openbis:default_object_type",
+      "@id": "openbis:DefaultCollectionView",
       "@type": "rdfs:Property",
       "schema:domainIncludes": [
         {
@@ -148,7 +173,7 @@
       ]
     },
     {
-      "@id": "openbis:code",
+      "@id": "openbis:hasCode",
       "@type": "rdfs:Property",
       "schema:domainIncludes": [
         {
@@ -298,6 +323,9 @@
       "schema:domainIncludes": [
         {
           "@id": "openbis:BaseObject"
+        },
+        {
+          "@id": "openbis:Vocabulary"
         }
       ],
       "schema:rangeIncludes": [
@@ -345,6 +373,20 @@
       "schema:rangeIncludes": [
         {
           "@id": "xsd:boolean"
+        }
+      ]
+    },
+    {
+      "@id": "openbis:hasLabel",
+      "@type": "obenbis:Property",
+      "schema:domainIncludes": [
+        {
+          "@id": "openbis:Vocabulary"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "xsd:string"
         }
       ]
     }
