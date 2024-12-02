@@ -114,6 +114,9 @@
       "@type": "rdfs:Property",
       "schema:domainIncludes": [],
       "schema:rangeIncludes": [
+        {
+          "@id": "xsd:string"
+        }
       ]
     },
     {
