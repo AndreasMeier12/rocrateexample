@@ -237,7 +237,7 @@
       ]
     },
     {
-      "@id": "openbis-system:identifier",
+      "@id": "openbis-system:hasIdentifier",
       "@type": "rdfs:Property",
       "schema:domainIncludes": [
         {
