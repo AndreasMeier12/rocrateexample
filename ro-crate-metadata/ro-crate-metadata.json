@@ -138,6 +138,13 @@
       }
     },
     {
+      "@id": "openbis-schema:Raw_Data",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": {
+        "@id": "openbis-system:Dataset"
+      }
+    },
+    {
       "@id": "openbis-system:VocabularyDefaultView",
       "@type": "rdfs:Class",
       "rdfs:subClassOf": {
@@ -223,11 +230,45 @@
       ]
     },
     {
-      "@id": "openbis-system:$xmlcomments",
+      "@id": "openbis-system:hasNotes",
       "@type": "rdfs:Property",
       "schema:domainIncludes": [
         {
+          "@id": "openbis-system:Dataset"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "xsd:string"
+        }
+      ]
+    },
+    {
+      "@id": "openbis-system:hasName",
+      "@type": "rdfs:Property",
+      "schema:domainIncludes": [
+        {
+          "@id": "openbis-system:Dataset"
+        },
+        {
           "@id": "openbis-system:Object"
+        },
+        {
+          "@id": "openbis-system:Collection"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "xsd:string"
+        }
+      ]
+    },
+    {
+      "@id": "openbis-system:$hasXmlcomments",
+      "@type": "rdfs:Property",
+      "schema:domainIncludes": [
+        {
+          "@id": "openbis-system:Dataset"
         }
       ],
       "schema:rangeIncludes": [
