@@ -1,3 +1,5 @@
+Obsolete, please see https://sissource.ethz.ch/sispub/ro-crate/
+
 # RO-Crate example with schema
 
 This is a small example of an ro crate with a RDFS schema expressed in JSON-LD.  
